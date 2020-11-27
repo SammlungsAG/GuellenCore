@@ -1,3 +1,9 @@
+author: SammlungsAG
+prefix: GuellenCore
 name: guellencore
 main: sammlung.guellencore.GuellenCore
-version: 1.0
+version: 0.1
+commands:
+   game:
+      description: Im gay
+  
