@@ -25,3 +25,4 @@ hs_err_pid*
 
 #But!
 !paper-1.16.4-295.jar
+/target/
