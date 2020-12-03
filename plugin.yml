@@ -2,8 +2,10 @@ author: SammlungsAG
 prefix: GuellenCore
 name: guellencore
 main: sammlung.guellencore.GuellenCore
-version: 0.1
+version: 0.2Beta
+api-version: 1.16 
 commands:
-   game:
-      description: Im gay
-  
+   countervote:
+     description: Vote to not skip the night
+     usage: Use to Counter-vote. Lay down in a bed to revoke your Countervote
+     

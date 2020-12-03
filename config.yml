@@ -1,0 +1,40 @@
+#----------------------------------------------------------------------------------------#
+#     #####                                                #####                         # 
+#    #     # #    # ###### #      #      ###### #    #    #     #  ####  #####  ######   #
+#    #       #    # #      #      #      #      ##   #    #       #    # #    # #        #
+#    #  #### #    # #####  #      #      #####  # #  #    #       #    # #    # #####    #
+#    #     # #    # #      #      #      #      #  # #    #       #    # #####  #        #
+#    #     # #    # #      #      #      #      #   ##    #     # #    # #   #  #        #
+#     #####   ####  ###### ###### ###### ###### #    #     #####   ####  #    # ######   #
+#----------------------------------------------------------------------------------------#
+
+#Nightskip Options
+enable_nightskip: true
+
+#The Amount of Players needed to skip the night
+#If smaller than 1 it is interpreted as a percentage
+needed_players: 0.5
+
+#Whether Players should have the Option to vote against the skip if they dont want the night to be skipped
+#Why this could be useful? Imagine you travel 5000 Blocks to a swamp to farm slimes(Youre too dumb to find Slime-Chunks)
+#and then your friends skip the night so you have to stand their 20 Minutes doing nothing(Yes that happened to me)
+allow_countervotes: true
+
+#Time a player needs to lay in a bed until he counts towards the vote. Default: 3 Seconds
+sleep_vote_delay: 60
+
+#At the End of Each Message "(<Sleeping Players> - <Countervotes> / <Required-Players>  <Percentage>)" is appended
+msg_now_sleeping: is now sleeping!
+
+msg_leave_Bed: left the Bed
+
+# "<Countervotes> Counter-Voters" is appended
+msg_countervote: voted to not skip the Night
+
+msg_revoke_counter: revoked his Counter-Vote and is now sleeping!
+
+msg_good_morning: Good Morning everybody!
+
+msg_wrong_dimension: You need to be in the Overworld to vote!
+
+                                                                                   
