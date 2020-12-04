@@ -37,4 +37,11 @@ msg_good_morning: Good Morning everybody!
 
 msg_wrong_dimension: You need to be in the Overworld to vote!
 
+#Status Message to show how many People sleep, how many people are against it, and how many people are needed to skip
+#Formatting:
+#  <people_sleep> - Will be replaced with the Amount of people sleeping
+#  <counter_voters> - Will be replaced with people who are against the skip
+#  <required> - Will be replaced with people required for the skip
+msg_status: <people_sleep> Players are laying in bed. <required> Players are needed for the Skip\n<counter_voters> are voting against it.
+
                                                                                    

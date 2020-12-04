@@ -215,12 +215,8 @@ public class Nightskip {
 	}
 
 	public static String getStatusMessage() {
-		//return String.format("%s%d Leute liegen im Bett%s %s und %d Leute sind dagegen%s. %s%d%s", ChatColor.GREEN, getSleepVotes(), ChatColor.GOLD, ChatColor.DARK_RED, getCounterVotes(), ChatColor.GOLD, ChatColor.AQUA, getRequiredPlayers() % 1 == 0 ? (int) getRequiredPlayers() : (int) (getRequiredPlayers() + 1), ChatColor.GOLD);
-		//return String.format("%s%d Leute liegen im Bett%s %s und %d Leute sind dagegen%s. %s%d%s", ChatColor.GREEN, getSleepVotes(), ChatColor.GOLD, ChatColor.DARK_RED, getCounterVotes(), ChatColor.GOLD, ChatColor.AQUA, getRequiredPlayers() % 1 == 0 ? (int) getRequiredPlayers() : (int) (getRequiredPlayers() + 1), ChatColor.GOLD);
-		//Grau(Es liegen grün(a) Spieler im Bett. Es braucht noch blau(c) Spieler um die Nacht zu skippen.)
-		//Grau(rot(b) Spieler haben sich dagegen gestimmt.)
-		return "§6Es liegen §a" +  getSleepVotes() + "§6 Spieler im Bett und §9 " +  (getRequiredPlayers() % 1 == 0 ? (int) getRequiredPlayers() : (int) (getRequiredPlayers() + 1)) +  "§6 Spieler um die Nacht zu skippen\n§c" + getCounterVotes() + "§6Spieler haben dagegen gestimmt.";
-		
+		String config = "§6" + GuellenCore.instance.getConfig().getString("msg_status");
+		return config.replaceAll("<people_sleep>", "§a" + Integer.toString(getSleepVotes()) + "§6").replaceAll("<counter_voters", "§c" + Integer.toString(getCounterVotes()) + "§6").replaceAll("<required>", "§c" + Integer.toString((getRequiredPlayers() % 1 == 0 ? (int) getRequiredPlayers() : (int) (getRequiredPlayers() + 1))) + "§6");
 	}
 
 	public static String getSleepMessage(String playerName) {

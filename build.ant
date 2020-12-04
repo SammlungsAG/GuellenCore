@@ -13,7 +13,7 @@
            <fileset dir="${basedir}">
               <include name="**.yml"/>
            </fileset>
-           <fileset dir="${basedir}\bin">
+           <fileset dir="${basedir}\target\classes">
                <include name="**"/>
            </fileset>
         </jar>
