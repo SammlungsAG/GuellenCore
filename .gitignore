@@ -27,5 +27,8 @@ hs_err_pid*
 !paper-1.16.4-295.jar
 /target/
 
+# Booshit
 .classpath
 .project
+.externalToolBuilders
+.settings
