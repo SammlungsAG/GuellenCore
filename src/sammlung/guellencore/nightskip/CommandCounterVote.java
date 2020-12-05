@@ -9,24 +9,30 @@ import org.bukkit.entity.Player;
 
 import sammlung.guellencore.GuellenCore;
 
+/**
+ * Command Executor for the Counter-Vote Command
+ */
 public class CommandCounterVote implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (sender instanceof Player) {
 			Player player = Player.class.cast(sender);
-
-			if (player.getWorld().getUID().equals(GuellenCore.instance.getOverworld().getUID())) {
-				if (!Nightskip.hasVoted(player.getUniqueId())) {
-					Nightskip.vote(player.getUniqueId(), true);
-					Bukkit.broadcastMessage(Nightskip.getCountervoteMessage(player.getName()));
+			if (GuellenCore.instance.getConfig().getBoolean("enable_nightskip") && GuellenCore.instance.getConfig().getBoolean("allow_countervotes")) {
+				if (player.getWorld().getUID().equals(GuellenCore.instance.getOverworld().getUID())) {
+					if (!Nightskip.hasVoted(player.getUniqueId())) {
+						Nightskip.vote(player.getUniqueId(), true);
+						Bukkit.broadcastMessage(Nightskip.getCountervoteMessage(player.getName()));
+					} else {
+						player.sendMessage(ChatColor.GOLD + "You already voted");
+					}
 				} else {
-					player.sendMessage(ChatColor.GOLD + "You already voted");
+					player.sendMessage(ChatColor.GOLD + GuellenCore.instance.getConfig().getString("msg_wrong_dimension"));
 				}
+				return true;
 			} else {
-				player.sendMessage(GuellenCore.instance.getConfig().getString("msg_wrong_dimension"));
+				player.sendMessage(ChatColor.DARK_RED + "This feature is disabled in the Server-Config");
 			}
-			return true;
 		}
 		return false;
 	}

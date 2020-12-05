@@ -8,6 +8,10 @@ import javax.annotation.Nullable;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+/**
+ * Represents a vote used within the Nightskip System
+ *
+ */
 public class NightskipVote {
 
 	/**

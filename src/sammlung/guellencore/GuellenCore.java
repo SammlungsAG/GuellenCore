@@ -24,9 +24,11 @@ public class GuellenCore extends JavaPlugin {
 		// Nightskip
 		if (getConfig().getBoolean("enable_nightskip")) {
 			getServer().getPluginManager().registerEvents(new NightskipListener(), this);
-			getCommand("countervote").setExecutor(new CommandCounterVote());
 			Nightskip.worldTimeWatcher.runTaskTimer(this, 0L, 0L);
 		}
+		
+		//Command Registry
+		getCommand("countervote").setExecutor(new CommandCounterVote());
 	}
 
 	@Override

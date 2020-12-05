@@ -42,6 +42,6 @@ msg_wrong_dimension: You need to be in the Overworld to vote!
 #  <people_sleep> - Will be replaced with the Amount of people sleeping
 #  <counter_voters> - Will be replaced with people who are against the skip
 #  <required> - Will be replaced with people required for the skip
-msg_status: <people_sleep> Players are laying in bed. <required> Players are needed for the Skip\n<counter_voters> are voting against it.
+msg_status: <people_sleep> Players are laying in bed. <required> Players are needed for the Skip. <counter_voters> are voting against it.
 
                                                                                    

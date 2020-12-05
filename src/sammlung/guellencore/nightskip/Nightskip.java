@@ -18,6 +18,9 @@ import sammlung.guellencore.event.NightskipEvent;
 import sammlung.guellencore.tasks.SleepTimer;
 import sammlung.guellencore.tasks.WorldTimeWatcher;
 
+/**
+ * Main Class for Interaction with the Nightskip System. You should try not to use this if enable_nightskip isnt enabled in the config
+ */
 public class Nightskip {
 
 	private static ArrayList<NightskipVote> votes = new ArrayList<NightskipVote>();
@@ -214,26 +217,45 @@ public class Nightskip {
 		return votes.size();
 	}
 
+	/**
+	 * Gets the Status Message indicating how many People sleep, how many people are required for the Skip, and how many People are gainst it
+	 */
 	public static String getStatusMessage() {
 		String config = "§6" + GuellenCore.instance.getConfig().getString("msg_status");
 		return config.replaceAll("<people_sleep>", "§a" + Integer.toString(getSleepVotes()) + "§6").replaceAll("<counter_voters", "§c" + Integer.toString(getCounterVotes()) + "§6").replaceAll("<required>", "§c" + Integer.toString((getRequiredPlayers() % 1 == 0 ? (int) getRequiredPlayers() : (int) (getRequiredPlayers() + 1))) + "§6");
 	}
 
+	/**
+	 * Gets the Message to display when someone sleeps. Includes the Status Message
+	 * @param playerName The Name of the Player sleeping
+	 */
 	public static String getSleepMessage(String playerName) {
 		String s = GuellenCore.instance.getConfig().getString("msg_now_sleeping");
 		return String.format("%s%s %s\n%s", ChatColor.GOLD, playerName, s, getStatusMessage());
 	}
 
+	/**
+	 * Gets the Message to display when someone leaves their bed. Includes the Status Message
+	 * @param playerName The Name of the Player who left
+	 */
 	public static String getBedLeaveMesssage(String playerName) {
 		String s = GuellenCore.instance.getConfig().getString("msg_leave_Bed");
 		return String.format("%s%s %s\n%s", ChatColor.GOLD, playerName, s, getStatusMessage());
 	}
 
+	/**
+	 * Gets the Message to display when someone revokes their Countervote. Includes the Status Message
+	 * @param playerName The Player revoking the Counter
+	 */
 	public static String getRevokeCounterMessage(String playerName) {
 		String s = GuellenCore.instance.getConfig().getString("msg_revoke_counter");
 		return String.format("%s%s %s\n%s", ChatColor.GOLD, playerName, s, getStatusMessage());
 	}
 
+	/**
+	 * Gets the Message to Display if someone Counter-Votes. Includes the Status Message
+	 * @param playerName The Counter-voting Player
+	 */
 	public static String getCountervoteMessage(String playerName) {
 		String s = GuellenCore.instance.getConfig().getString("msg_countervote");
 		return String.format("%s%s %s (%s%d Counter-Voters", ChatColor.GOLD, playerName, s, ChatColor.DARK_RED, getCounterVotes()) + ")";

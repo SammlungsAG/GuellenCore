@@ -13,6 +13,9 @@ import net.md_5.bungee.api.ChatColor;
 import sammlung.guellencore.GuellenCore;
 import sammlung.guellencore.nightskip.Nightskip;
 
+/**
+ * Watches for Changes in the World Time and updates the Nightskip System.
+ */
 public class WorldTimeWatcher extends BukkitRunnable {
 
 	public Map<UUID, Boolean> worldTimeStates = new HashMap<UUID, Boolean>();

@@ -6,6 +6,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import sammlung.guellencore.nightskip.Nightskip;
 
+/**
+ * Timer to execute Nightskip relevant Code after set amount of Time.
+ * Votes, sends the Sleeping Chat Message
+ */
 public class SleepTimer extends BukkitRunnable {
 
 	/**
