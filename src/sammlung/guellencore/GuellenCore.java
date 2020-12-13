@@ -10,6 +10,8 @@ import org.bukkit.scheduler.BukkitRunnable;
 import sammlung.guellencore.nightskip.CommandCounterVote;
 import sammlung.guellencore.nightskip.Nightskip;
 import sammlung.guellencore.nightskip.NightskipListener;
+import sammlung.guellencore.randomserverlist.RandomServerList;
+import sammlung.guellencore.randomserverlist.RandomServerListListener;
 
 public class GuellenCore extends JavaPlugin {
 
@@ -25,6 +27,12 @@ public class GuellenCore extends JavaPlugin {
 		if (getConfig().getBoolean("enable_nightskip")) {
 			getServer().getPluginManager().registerEvents(new NightskipListener(), this);
 			Nightskip.worldTimeWatcher.runTaskTimer(this, 0L, 0L);
+		}
+		
+		//Random Motd
+		if (getConfig().getBoolean("enable_random_server_list")) {
+			RandomServerList.load();
+			getServer().getPluginManager().registerEvents(new RandomServerListListener(), this);
 		}
 		
 		//Command Registry

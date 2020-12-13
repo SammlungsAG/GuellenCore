@@ -9,6 +9,9 @@
 #----------------------------------------------------------------------------------------#
 
 #Nightskip Options
+#Allows the Night to be skipped without all Players sleeping by using a Vote Sytem. 
+#It does not mess with World Time or Local Difficulty as it simply uses a Bukkit Feature to ignore the non sleeing players
+
 enable_nightskip: true
 
 #The Amount of Players needed to skip the night
@@ -44,4 +47,25 @@ msg_wrong_dimension: You need to be in the Overworld to vote!
 #  <required> - Will be replaced with people required for the skip
 msg_status: <people_sleep> Players are laying in bed. <required> Players are needed for the Skip. <counter_voters> are voting against it.
 
-                                                                                   
+#Random Server List Options
+#Allows for Random MOTD's, Random Server Icons and other customization of the Server List Ping(The Information you see in the Clients Multiplayer Screen before connecting to the Server)
+enable_random_server_list: true
+
+#A List defining the possible Motos of the Day
+#Add more "-" or modify it however you like. Just remember to put the Space after the " " and correctly align it
+#Remember to not use tabs cause it breaks everything. Dependent on enable_random_server_list
+random_motd: true
+motd:
+- Guellen never dies
+- Errors? Just rewrite it
+- A Minceraft Servah
+
+#Randomized Server Icons. Dependent on enable_random_server_list
+random_server_icon: false
+icon_names:
+- server-icon.png
+
+#Occasinally rename a random Player to Herobrine while previewing the Players on the Server
+enable_herobrine_invasion: false
+# 1 in
+herobrine_chance: 5
