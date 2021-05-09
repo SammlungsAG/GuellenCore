@@ -28,6 +28,8 @@ hs_err_pid*
 /target/
 
 # Booshit
+GuellenCore.iml
+.idea
 .classpath
 .project
 .externalToolBuilders
