@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project name="guellencore" default="moveJar" basedir = ".">
+
+    <basename file="${basedir}" property="project.projectname"/>
+    <property name="serverdir" location="server"/>
+
+    <target name="dir.exists" description="is there even a server?">
+        <condition property="dir.exists">
+            <available file="${serverdir}" type="dir"/>
+        </condition>
+    </target>
+
+    <target name="setup" description="setup" depends="dir.exists">
+        <mkdir dir="${serverdir}/plugins"/>
+    </target>
+
+    <target name="moveJar" description="Copies the newest version to the server" depends="setup">
+        <delete description="Remove any previous versions">
+            <fileset dir="${serverdir}/plugins">
+                <patternset id="previous.builds">
+                    <include name="**/${maven.project.baseName}*.jar"/>
+                    <exclude name="**/${maven.project.fullName}.jar"/>
+                </patternset>
+            </fileset>
+        </delete>
+        <copy file="${maven.project.outputDir}/${maven.project.fullName}.jar" todir="${serverdir}/plugins" overwrite="true"/>
+    </target>
+</project>

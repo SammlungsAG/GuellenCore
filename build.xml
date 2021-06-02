@@ -4,6 +4,8 @@
     <basename file="${basedir}" property="project.projectname"/>
     <property name="project.pluginsLocation" location="exports"/>
 
+
+
     <target name="clean" description="Cleans project">
         <delete file="${project.pluginsLocation}\${project.projectname}.jar"/>
     </target>
